@@ -32,6 +32,7 @@ div>div * {
 div img {
     margin: 0 auto;
     width: 90%;
+    animation: float 6s ease-in-out infinite;
 }
 
 div h3 {
@@ -66,6 +67,7 @@ div a:hover {
     background-color: #ff6d5b;
 }
 
+
 div>div {
     flex-direction: column;
     gap: 2em;
@@ -75,27 +77,43 @@ div>div {
 @media screen and (min-width: 1000px) {
     div {
         min-height: 80dvh;
-        flex-wrap: nowrap;
-        gap: 1em;
     }
 
-    div > div {
+    div>div {
         justify-content: center;
+        flex: 2;
+        max-width: 40%;
+        /* background-color: grey; */
+        padding: 0 10em;
+    }
+
+    div > div * {
+        max-width: 65%;
     }
 
     div img {
         align-self: center;
-        width: 40%;
+        flex: 1;
         height: fit-content;
     }
 
-    div h3 {
-        max-width: 75%;
-    }
-
     div p {
-        max-width: 60%;
         line-height: 36px;
         letter-spacing: -0.035em;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+
+        transform: translatey(0px);
     }
 }
